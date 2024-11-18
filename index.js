@@ -13,9 +13,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bacheca', (req, res) => {
-    res.json({postsList})
+    const result = {
+        count: postsList.length,
+        list: postsList
+    }
+    res.json(result)
 })
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 })
+
